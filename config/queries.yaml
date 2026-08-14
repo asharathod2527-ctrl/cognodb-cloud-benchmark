@@ -1,0 +1,26 @@
+queries:
+  - id: create_nodes
+    name: Create nodes
+    cypher: |
+      CREATE (n:Person {id: $id, name: $name})
+      RETURN n
+
+  - id: read_nodes
+    name: Read nodes
+    cypher: |
+      MATCH (n:Person)
+      RETURN n
+      LIMIT $limit
+
+  - id: update_node
+    name: Update node
+    cypher: |
+      MATCH (n:Person {id: $id})
+      SET n.name = $name
+      RETURN n
+
+  - id: delete_node
+    name: Delete node
+    cypher: |
+      MATCH (n:Person {id: $id})
+      DELETE n
