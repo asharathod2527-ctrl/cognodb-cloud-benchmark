@@ -1,0 +1,12 @@
+databases:
+  cognodb:
+    name: "CognoDB Cloud"
+    uri_env: "COGNODB_URI"
+    username_env: "COGNODB_USERNAME"
+    password_env: "COGNODB_PASSWORD"
+
+  comparison_db:
+    name: "Comparison Database"
+    uri_env: "DB2_URI"
+    username_env: "DB2_USERNAME"
+    password_env: "DB2_PASSWORD"
