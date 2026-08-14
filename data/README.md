@@ -1,7 +1,27 @@
 # Dataset
 
-The benchmark will use one public graph dataset containing at least 100,000 relationships.
+## SNAP Wiki-Vote
 
-The exact dataset source, node count, relationship count, download method, and preprocessing steps will be documented here after the dataset is selected.
+Source: Stanford Network Analysis Project (SNAP)
 
-The identical dataset will be loaded into every database used in the benchmark.
+Dataset: Wiki-Vote
+
+Nodes: 7,115
+
+Relationships: 103,689 directed edges
+
+The same dataset will be loaded into every graph database used in this benchmark.
+
+The actual dataset file is not stored in this repository.
+
+## Dataset File
+
+wiki-Vote.txt
+
+## Verification
+
+The extracted dataset was verified locally using Windows PowerShell.
+
+Number of relationship records:
+
+103,689
