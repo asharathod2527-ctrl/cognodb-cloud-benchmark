@@ -166,3 +166,17 @@ Create and activate a Python virtual environment, install the dependencies from 
 
 Asha Rathod
 
+
+
+
+
+\## Graph Visualization
+
+
+
+A representative subgraph of the soc-Pokec dataset is shown below.
+
+
+
+!\[Pokec Graph Visualization](benchmark/results/pokec\_graph.png)
+
