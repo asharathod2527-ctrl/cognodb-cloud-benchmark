@@ -1,0 +1,11 @@
+CONCLUSION
+
+The benchmark compared Neo4j and NetworkX using the same soc-Pokec 120K graph dataset containing 60,454 nodes and 120,000 relationships.
+
+Both systems produced consistent graph-analysis results, including the same top-degree nodes and 283 nodes reached during the two-hop traversal from node 1.
+
+Neo4j provides persistent graph storage and database-based graph querying using Cypher. It is suitable for applications that require persistent storage, structured graph queries, and graph data management.
+
+NetworkX provides an in-memory Python-based approach and is suitable for graph algorithms, experimentation, and analysis.
+
+Therefore, Neo4j is more appropriate for graph database workloads, while NetworkX is well suited for programmatic graph analysis and experimentation. The choice depends on the requirements of the application.
