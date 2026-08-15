@@ -1,0 +1,23 @@
+NETWORKX 3-RUN BENCHMARK SUMMARY
+================================
+
+Dataset: soc-Pokec 120K
+Nodes: 60,454
+Edges: 120,000
+
+Metric                  Run 1       Run 2       Run 3       Average
+----------------------------------------------------------------------
+Data loading            0.042586    0.038833    0.039274    0.040231
+Graph building          0.207269    0.209712    0.180494    0.199158
+Two-hop traversal       0.000081    0.000074    0.000092    0.000082
+Degree centrality       0.022784    0.021372    0.018892    0.021016
+PageRank                0.330275    0.295186    0.262498    0.295986
+
+Conclusion
+----------
+NetworkX produced consistent results across three benchmark runs.
+Two-hop traversal was the fastest measured operation, while PageRank
+required the most computation time among the measured graph algorithms.
+
+The three-run average provides a more reliable performance measurement
+than a single benchmark execution.
