@@ -1,0 +1,120 @@
+
+POKEC GRAPH DATABASE BENCHMARK COMPARISON
+=========================================
+
+Dataset: soc-Pokec
+Dataset size: 120K
+
+-----------------------------------------
+NEO4J RESULTS
+-----------------------------------------
+
+
+NEO4J GRAPH BENCHMARK
+=====================
+
+Database: Neo4j
+Dataset: soc-Pokec
+Relationships: FRIEND
+
+Nodes: 60454
+Relationships: 120000
+
+Timing
+------
+Node count: 0.036605 seconds
+Relationship count: 0.028388 seconds
+Degree query: 0.461818 seconds
+Outgoing relationship query: 0.258774 seconds
+Two-hop traversal: 0.323748 seconds
+
+Top 10 Nodes by Degree
+----------------------
+[{'id': 1891, 'degree': 7577}, {'id': 189, 'degree': 6669}, {'id': 1830, 'degree': 1761}, {'id': 76, 'degree': 998}, {'id': 1022, 'degree': 814}, {'id': 1482, 'degree': 714}, {'id': 1888, 'degree': 560}, {'id': 1752, 'degree': 483}, {'id': 1023, 'degree': 390}, {'id': 1395, 'degree': 376}]
+
+Top 10 Nodes by Outgoing FRIEND Relationships
+-----------------------------------------------
+[{'id': 1891, 'outgoing': 7564}, {'id': 189, 'outgoing': 6661}, {'id': 1830, 'outgoing': 1757}, {'id': 76, 'outgoing': 995}, {'id': 1022, 'outgoing': 806}, {'id': 1482, 'outgoing': 714}, {'id': 1888, 'outgoing': 560}, {'id': 1752, 'outgoing': 483}, {'id': 1023, 'outgoing': 384}, {'id': 1395, 'outgoing': 376}]
+
+Two-hop traversal from node 1
+-----------------------------
+[{'nodes': 283}]
+
+
+-----------------------------------------
+NETWORKX RESULTS
+-----------------------------------------
+
+
+POKEC GRAPH BENCHMARK - NETWORKX
+================================
+
+Database/Library: NetworkX
+Dataset: soc-Pokec
+Input file: benchmark\data\pokec-120k.txt
+
+Rows: 120000
+Nodes: 60454
+Edges: 120000
+Density: 3.283510025328553e-05
+Connected Components: 1
+Average Degree: 3.9699606312237403
+
+Timing
+------
+Data loading: 0.067743 seconds
+Graph building: 0.320425 seconds
+Outgoing relationship analysis: calculated
+Two-hop traversal from node 1: 0.000141 seconds
+Degree centrality: 0.030461 seconds
+PageRank: 0.445548 seconds
+
+Two-hop traversal from node 1
+-----------------------------
+Nodes reached: 283
+
+Top 10 Nodes by Degree
+----------------------
+[(1891, 7577), (189, 6669), (1830, 1761), (76, 998), (1022, 814), (1482, 714), (1888, 560), (1752, 483), (1023, 390), (1395, 376)]
+
+Top 10 Nodes by Outgoing Relationships
+--------------------------------------
+[(1891, 7564), (189, 6661), (1830, 1757), (76, 995), (1022, 806), (1482, 714), (1888, 560), (1752, 483), (1023, 384), (1395, 376)]
+
+Top 10 Nodes by Degree Centrality
+---------------------------------
+[(1891, 0.12533703869121465), (189, 0.11031710585082626), (1830, 0.02913006798670041), (76, 0.016508692703422492), (1022, 0.013465005872330571), (1482, 0.011810828246737135), (1888, 0.009263394703323243), (1752, 0.007989677931616297), (1023, 0.006451292739814401), (1395, 0.00621970787223132)]
+
+Top 10 Nodes by PageRank
+------------------------
+[(19, 0.00010508520682123931), (63, 0.0001032056074817475), (28, 8.098293495238372e-05), (79, 8.051547145297854e-05), (92, 7.764746915572975e-05), (27, 6.594315365955008e-05), (123, 5.918797112504099e-05), (25, 5.9165266467398955e-05), (47, 5.675209737460466e-05), (137, 5.382797908106173e-05)]
+
+
+-----------------------------------------
+COMPARISON SUMMARY
+-----------------------------------------
+
+Both Neo4j and NetworkX were tested using the same
+soc-Pokec 120K graph dataset.
+
+Neo4j:
+- Graph database system
+- Data stored and queried using Cypher
+- Suitable for persistent graph storage and graph queries
+
+NetworkX:
+- Python graph analysis library
+- Graph loaded into memory
+- Suitable for graph algorithms and analysis
+
+The benchmark results above can be used to compare:
+- Node and relationship statistics
+- Degree analysis
+- Degree centrality
+- PageRank
+- Query/algorithm execution time
+
+Conclusion:
+Neo4j provides a database-oriented approach for storing
+and querying graph data, while NetworkX provides an
+in-memory Python-based approach for graph analysis.
