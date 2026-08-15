@@ -1,11 +1,14 @@
 from neo4j import GraphDatabase
+from dotenv import load_dotenv
+import os
 import time
 from pathlib import Path
 
-URI = "bolt://localhost:7687"
-USERNAME = "neo4j"
-PASSWORD = "Rathodyashoda@20"
+load_dotenv()
 
+URI = os.getenv("NEO4J_URI")
+USERNAME = os.getenv("NEO4J_USERNAME")
+PASSWORD = os.getenv("NEO4J_PASSWORD")
 RESULT_FILE = Path("benchmark/results/neo4j_results.txt")
 
 driver = GraphDatabase.driver(

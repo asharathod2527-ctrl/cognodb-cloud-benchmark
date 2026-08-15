@@ -11,11 +11,11 @@ Relationships: 120000
 
 Timing
 ------
-Node count: 0.125172 seconds
-Relationship count: 0.132968 seconds
-Degree query: 1.141560 seconds
-Outgoing relationship query: 0.515932 seconds
-Two-hop traversal: 0.875572 seconds
+Node count: 0.002756 seconds
+Relationship count: 0.002110 seconds
+Degree query: 0.051311 seconds
+Outgoing relationship query: 0.058907 seconds
+Two-hop traversal: 0.027371 seconds
 
 Top 10 Nodes by Degree
 ----------------------
