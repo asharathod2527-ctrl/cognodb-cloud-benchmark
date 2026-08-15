@@ -15,12 +15,12 @@ Average Degree: 3.9699606312237403
 
 Timing
 ------
-Data loading: 0.067743 seconds
-Graph building: 0.320425 seconds
+Data loading: 0.109332 seconds
+Graph building: 0.388181 seconds
 Outgoing relationship analysis: calculated
-Two-hop traversal from node 1: 0.000141 seconds
-Degree centrality: 0.030461 seconds
-PageRank: 0.445548 seconds
+Two-hop traversal from node 1: 0.000145 seconds
+Degree centrality: 0.037309 seconds
+PageRank: 0.636568 seconds
 
 Two-hop traversal from node 1
 -----------------------------
