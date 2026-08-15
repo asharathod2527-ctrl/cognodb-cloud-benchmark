@@ -1,0 +1,10 @@
+Metric,Neo4j,NetworkX
+Nodes,60454,60454
+Relationships/Edges,120000,120000
+Node Count Time (s),0.036605,-
+Relationship Count Time (s),0.028388,-
+Degree Query Time (s),0.461818,-
+Outgoing Relationship Query Time (s),0.258774,-
+Two-Hop Traversal Time (s),0.323748,0.000141
+Degree Centrality Time (s),-,0.030461
+PageRank Time (s),-,0.445548
