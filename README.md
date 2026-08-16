@@ -50,6 +50,10 @@ The large raw relationship dataset is not stored in this repository because of G
 
 \- Cypher
 
+\- Pandas
+
+\- Matplotlib
+
 \- Git and GitHub
 
 
@@ -78,39 +82,71 @@ The benchmark evaluates:
 
 
 
+Each benchmark was executed three times to reduce the effect of individual run variation.
+
+
+
 \## Results
 
 
 
-\### Neo4j
+\### Neo4j — Average of 3 Runs
 
 
 
-\- Node count: 0.036605 seconds
+| Operation | Average Time |
 
-\- Relationship count: 0.028388 seconds
+|---|---:|
 
-\- Degree query: 0.461818 seconds
+| Node count | 0.004043 s |
 
-\- Outgoing relationship query: 0.258774 seconds
+| Relationship count | 0.002170 s |
 
-\- Two-hop traversal: 0.323748 seconds
+| Degree query | 0.051678 s |
+
+| Outgoing relationship query | 0.044550 s |
+
+| Two-hop traversal | 0.025820 s |
 
 
 
-\### NetworkX
+\### NetworkX — Average of 3 Runs
 
 
 
-\- Data loading: 0.067743 seconds
+| Operation | Average Time |
 
-\- Graph building: 0.320425 seconds
+|---|---:|
 
-\- Two-hop traversal: 0.000141 seconds
+| Data loading | 0.040231 s |
 
-\- Degree centrality: 0.030461 seconds
+| Graph building | 0.199158 s |
 
-\- PageRank: 0.445548 seconds
+| Two-hop traversal | 0.000082 s |
+
+| Degree centrality | 0.021016 s |
+
+| PageRank | 0.295986 s |
+
+
+
+\## Interpretation
+
+
+
+The benchmark shows different strengths between Neo4j and NetworkX.
+
+
+
+Neo4j provides persistent graph storage and database-oriented querying using Cypher. It performed the database query operations quickly in the measured benchmark.
+
+
+
+NetworkX operates on an in-memory graph and showed particularly fast two-hop traversal and graph-analysis operations after the graph was loaded.
+
+
+
+The results should not be interpreted as a universal winner because the systems have different architectures and workloads.
 
 
 
@@ -118,15 +154,35 @@ The benchmark evaluates:
 
 
 
-Neo4j provides persistent graph storage and database-based graph querying, making it suitable for graph database workloads.
+Neo4j is suitable for persistent graph storage, graph database workloads, and query-based graph applications.
 
 
 
-NetworkX provides an in-memory Python-based approach, making it suitable for graph algorithms, experimentation, and analysis.
+NetworkX is suitable for in-memory graph algorithms, experimentation, analysis, and research workflows.
 
 
 
-The benchmark demonstrates that both tools can produce consistent graph-analysis results, while their strengths differ according to the workload and application requirements.
+The benchmark demonstrates that both systems can process the same soc-Pokec graph while providing different performance characteristics depending on the operation.
+
+
+
+\## Graphs
+
+
+
+\### NetworkX Performance
+
+
+
+!\[NetworkX Performance](benchmark/results/networkx\_performance.png)
+
+
+
+\### Neo4j Performance
+
+
+
+!\[Neo4j Performance](benchmark/results/neo4j\_performance.png)
 
 
 
@@ -136,15 +192,23 @@ The benchmark demonstrates that both tools can produce consistent graph-analysis
 
 \- benchmark/ — benchmark scripts and results
 
+\- benchmark/scripts/benchmark.py — NetworkX benchmark
+
+\- benchmark/scripts/neo4j\_benchmark.py — Neo4j benchmark
+
+\- benchmark/scripts/comparison.py — final comparison calculation
+
+\- benchmark/scripts/create\_graph.py — performance graph generation
+
+\- benchmark/results/ — benchmark results and graphs
+
 \- config/ — configuration files
 
 \- data/ — datasets and analysis files
 
-\- results/ — benchmark outputs
+\- results/ — additional benchmark outputs
 
 \- analysis.py — analysis script
-
-\- comparison.py — comparison script
 
 \- neo4j\_import.py — Neo4j data import
 
@@ -156,27 +220,15 @@ The benchmark demonstrates that both tools can produce consistent graph-analysis
 
 
 
-Create and activate a Python virtual environment, install the dependencies from requirements.txt, and run the benchmark scripts in benchmark/scripts/.
+Create and activate a Python virtual environment and install the dependencies from requirements.txt.
 
 
 
-\## Author
+Run the NetworkX benchmark:
 
 
 
-Asha Rathod
+```bash
 
-
-
-
-
-\## Graph Visualization
-
-
-
-A representative subgraph of the soc-Pokec dataset is shown below.
-
-
-
-!\[Pokec Graph Visualization](benchmark/results/pokec\_graph.png)
+py benchmark/scripts/benchmark.py
 
